@@ -1,0 +1,11 @@
+.listItem {
+  text-align: center;
+}
+
+.iconText {
+  max-width: 80px;
+  word-wrap: break-word;
+  margin: 0px;
+  color: var(--PortWhiteMuted);
+  font-family: "Abel";
+}

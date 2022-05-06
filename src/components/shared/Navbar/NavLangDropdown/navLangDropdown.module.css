@@ -1,0 +1,50 @@
+.container {
+  position: relative;
+  margin-left: auto;
+  padding: 0px;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.enter {
+  opacity: 0;
+}
+
+.enterActive {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.exit {
+  opacity: 1;
+}
+
+.exitActive {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.dropdownBtn {
+  color: white;
+  background-color: transparent;
+  border: none;
+  display:flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-family: 'Jura';
+  cursor: pointer;
+  transition: all ease 1s;
+}
+
+@media only screen and (max-width: 960px) {
+  .container {
+    margin: 0;
+    padding: 16px;
+    justify-content: center;
+    flex-grow: 0;
+  }
+}
+
+

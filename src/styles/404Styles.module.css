@@ -1,0 +1,48 @@
+.mainCont, .homeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeBtn, .icon {
+  font-size: 1.3rem;
+}
+
+.mainCont {
+  height: 100vh;
+  padding: 0px 20px 0px 20px;
+}
+
+.notFoundContent {
+  text-align: center;
+  color: var(--PortWhiteMuted);
+  font-size: 1.5rem;
+}
+
+.image {
+  display: block;
+  margin: auto;
+  max-width: 460px;
+  min-width: 250px;
+  width: 80%;
+}
+
+.homeBtn {
+  padding: 10px;
+  max-width: 250px;
+  font-family: "Abel";
+  background-color: black;
+  color: var(--PortWhiteMuted);
+  border-radius: 10px;
+  margin: 30px auto 0px auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.homeBtn:hover {
+  background-color: rgb(32, 32, 32);
+}
+
+.icon {
+  margin: 0px 0px 4px 5px;
+  vertical-align: middle;
+}

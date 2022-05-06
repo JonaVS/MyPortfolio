@@ -1,0 +1,36 @@
+{
+   "projectsData": [
+      {
+         "title": "Bargas",
+         "description": "Website & online ordering platform for a restobar.",
+         "descriptionES": "Sitio web y plataforma de pedidos en linea para un bar y restaurante.",
+         "image": "../images/projects/bargas.png",
+         "techStack": [
+            "Gatsby.js",
+            "React.js",
+            "Bootstrap",
+            "CSS",
+            "Strapi CMS",
+            "Node.js",
+            "MySQL",
+            "AWS  RDS",
+            "Cloudinary"
+         ],
+         "gitLink": "https://github.com/JonaVS/BargasFrontend",
+         "demoLink": ""
+      },
+      {
+         "title": "JVS Portfolio",
+         "description": "My personal portfolio.",
+         "descriptionES": "Mi portafolio personal.",
+         "image": "../images/projects/portfolio.png",
+         "techStack": [
+            "Gatsby.js",
+            "React.js",
+            "CSS"
+         ],
+         "gitLink": "https://github.com/JonaVS/MyPortfolio",
+         "demoLink": ""
+      }
+   ]
+}

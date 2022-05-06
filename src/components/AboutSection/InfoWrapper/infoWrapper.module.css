@@ -1,0 +1,22 @@
+.infoWrapper {
+  padding: 40px;
+  border: solid rgb(48, 48, 48) 2px;
+  border-radius: 10px;
+}
+
+.infoWrapper > p {
+  text-align: justify;
+  color: var(--PortWhiteMuted);
+}
+
+@media (min-width: 320px) {
+  .infoWrapper {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .infoWrapper {
+    padding: 40px;
+  }
+}
