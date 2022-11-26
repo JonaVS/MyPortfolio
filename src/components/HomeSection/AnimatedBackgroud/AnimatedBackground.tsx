@@ -5,7 +5,7 @@ const AnimatedBackground = () => {
   return (
     <div className={styles.area}>
       <ul className={styles.circles}>
-        {Array.from({ length: 10 }).map((_, idx) => (
+        {Array.from({ length: 10 }).map<JSX.Element>((_, idx:number) => (
           <li key={idx}></li>
         ))}
       </ul>

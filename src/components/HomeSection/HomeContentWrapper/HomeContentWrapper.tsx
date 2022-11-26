@@ -1,7 +1,11 @@
 import React from "react"
 import * as styles from "./homeContentWrapper.module.css"
 
-const HomeContentWrapper = ({ children }) => {
+type Props = {
+  children?: React.ReactNode
+}
+
+const HomeContentWrapper = ({ children }: Props) => {
   return <div className={styles.absolutePos}>{children}</div>
 }
 

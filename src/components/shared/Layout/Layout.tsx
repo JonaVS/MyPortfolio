@@ -5,7 +5,11 @@ import Footer from "../Footer/Footer"
 import { ToastContainer, Zoom } from "react-toastify"
 import * as styles from "../Layout/layout.module.css"
 
-const Layout = ({ children }) => {
+type Props = {
+  children?: React.ReactNode;
+}
+
+const Layout = ({ children }: Props) => {
   return (
     <div className={styles.pageWrapper}>
       <Navbar />
@@ -35,7 +39,7 @@ const Layout = ({ children }) => {
         role="alert"
         position="bottom-center"
         theme="dark"
-        autoClose="3000"
+        autoClose={3000}
         draggable
         transition={Zoom}
       />
