@@ -1,8 +1,10 @@
+import { GatsbyConfig } from "gatsby"
+
  require("dotenv").config({
    path: `.env.${process.env.NODE_ENV}`,
  })
 
-module.exports = {
+const config: GatsbyConfig = {
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
@@ -44,3 +46,5 @@ module.exports = {
     keywords: "JVS, JVS Portfolio, JonaVS",
   },
 }
+
+export default config
