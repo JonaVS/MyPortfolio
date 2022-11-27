@@ -1,4 +1,3 @@
-import { toast } from "react-toastify"
 import { ContactMessage } from "../types/contactMessage"
 
 async function sendMail(message: ContactMessage): Promise<boolean> {
