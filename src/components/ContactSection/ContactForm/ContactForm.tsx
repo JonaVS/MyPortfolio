@@ -1,6 +1,7 @@
 import React from "react"
 import { useIntl } from "gatsby-plugin-react-intl"
-import { Formik, Form } from "formik"
+import { ContactMessage } from "../../../types/contactMessage"
+import { Formik, Form, FormikHelpers } from "formik"
 import LoadingOverlay from "../../shared/LoadingOverlay/LoadingOverlay"
 import * as Yup from "yup"
 import Button from "../../shared/Button/Button"
@@ -13,13 +14,23 @@ import * as styles from "../ContactForm/contactForm.module.css"
 const ContactForm = () => {
   const intl = useIntl()
 
-  const handleSubmit = async (values, actions) => {
-    const status = await sendMail(values)
-    status === 200
-      ? toast(intl.formatMessage({ id: "contactSuccess" }), {
+  const handleSubmit = async (
+    values: ContactMessage,
+    actions: FormikHelpers<ContactMessage>
+  ): Promise<void> => {
+    try {
+      const success = await sendMail(values)
+      if (success) {
+        toast(intl.formatMessage({ id: "contactSuccess" }), {
           type: "success",
-        }) && actions.resetForm({})
-      : toast(intl.formatMessage({ id: "contactError" }), { type: "error" })
+        })
+        actions.resetForm({})
+      }else {
+       toast(intl.formatMessage({ id: "contactError" }), { type: "error" }) 
+      }
+    } catch (error) {
+      toast(intl.formatMessage({ id: "contactError" }), { type: "error" })
+    }
   }
 
   return (
