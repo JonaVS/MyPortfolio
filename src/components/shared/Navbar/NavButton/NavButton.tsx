@@ -2,7 +2,12 @@ import React from "react"
 import { FaTimes, FaBars } from "react-icons/fa"
 import * as styles from "./navButton.module.css"
 
-const NavButton = ({ showResponsiveMenu, handleShowMenu }) => {
+type Props = {
+  showResponsiveMenu: boolean,
+  handleShowMenu: () => void
+}
+
+const NavButton = ({ showResponsiveMenu, handleShowMenu  }: Props) => {
   return (
     <button className={styles.menuBtn} onClick={handleShowMenu}>
       {showResponsiveMenu ? (
@@ -12,11 +17,6 @@ const NavButton = ({ showResponsiveMenu, handleShowMenu }) => {
       )}
     </button>
   )
-}
-
-NavButton.defaultProps = {
-  showResponsiveMenu: false,
-  handleShowMenu: () => {}
 }
 
 export default NavButton

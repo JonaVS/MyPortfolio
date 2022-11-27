@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useIntl } from "gatsby-plugin-react-intl"
+import { NavLink } from "../../../types/navLink"
 import NavBrand from "./NavBrand/NavBrand"
 import { BsBriefcase } from "react-icons/bs"
 import { AiOutlineUser } from "react-icons/ai"
@@ -13,7 +14,7 @@ import * as styles from "./navbar.module.css"
 const Navbar = () => {
   const intl = useIntl()
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     {
       linkText: intl.formatMessage({ id: "nav-about" }),
       icon: <AiOutlineUser className="nav-icon" />,

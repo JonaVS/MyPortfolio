@@ -1,7 +1,11 @@
 import React from "react"
 import * as styles from "./title.module.css"
 
-const Title = ({ text }) => {
+type Props = {
+  text?: string
+}
+
+const Title = ({ text = 'default text ' }: Props) => {
   return (
     <h1 className={styles.title}>
       {text}
@@ -9,7 +13,4 @@ const Title = ({ text }) => {
   )
 }
 
-Title.defaultProps = {
-  text: "default text",
-}
 export default Title

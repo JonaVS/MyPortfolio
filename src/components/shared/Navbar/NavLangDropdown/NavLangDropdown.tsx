@@ -37,7 +37,7 @@ const NavLangDropdown = () => {
         }}
       >
         <DropdownList
-          items={options}
+          options={options}
         />
       </CSSTransition>
     </div>

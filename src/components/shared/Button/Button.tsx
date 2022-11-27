@@ -1,12 +1,14 @@
 import React from "react"
 import * as styles from "./button.module.css"
 
+type Props = React.ComponentPropsWithoutRef<"button"> 
+
 const Button = ({
-  onClick,
   type,
+  onClick,
   disabled,
   children,
-}) => {
+}: Props) => {
   return (
     <button
       type={type}
@@ -17,13 +19,6 @@ const Button = ({
       {children}
     </button>
   )
-}
-
-Button.defaultProps = {
-  type: 'button',
-  disabled: false,
-  onClick: () => {},
-  children: 'Default'
 }
 
 export default Button
