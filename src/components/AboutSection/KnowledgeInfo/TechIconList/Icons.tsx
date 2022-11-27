@@ -12,7 +12,7 @@ import CsharpIcon from "../../../shared/DevIcons/CsharpIcon"
 import MongoIcon from "../../../shared/DevIcons/MongoIcon"
 import MySqlIcon from "../../../shared/DevIcons/MySqlIcon"
 
-export const icons = [
+export const icons: TechIcon[] = [
   { id: 1, icon: <HtmlIcon />, text: "HTML5" },
   { id: 2, icon: <CssIcon />, text: "CCS3" },
   { id: 3, icon: <BsIcon />, text: "Bootstrap" },

@@ -1,7 +1,11 @@
 import React from "react"
 import * as styles from "./infoWrapper.module.css"
 
-const InfoWrapper = ({ children }) => {
+type Props = {
+  children?: React.ReactNode | React.ReactNode[]  
+}
+
+const InfoWrapper = ({ children }: Props) => {
   return (
     <div className={styles.infoWrapper}>
       {children}
