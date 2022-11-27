@@ -1,9 +1,14 @@
 import React from "react"
+import { Project } from "../../types/project"
 import { useIntl } from "gatsby-plugin-react-intl"
 import Title from "../shared/Title/Title"
 import ProjectCardList from "./ProjectCardList/ProjectCardList"
 
-const ProjectsSection = ({ projects }) => {
+type Props = {
+  projects: Project[]
+}
+
+const ProjectsSection = ({ projects }: Props) => {
   const intl = useIntl()
   return (
     <section>
@@ -11,10 +16,6 @@ const ProjectsSection = ({ projects }) => {
       <ProjectCardList projects={projects} />
     </section>
   )
-}
-
-ProjectsSection.defaultProps = {
-  projects: [],
 }
 
 export default ProjectsSection

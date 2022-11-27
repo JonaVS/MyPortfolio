@@ -2,7 +2,12 @@ import React from "react"
 import { FiGithub, FiEye } from "react-icons/fi"
 import IconLink from "../../../shared/IconLink/IconLink"
 
-const CardNav = ({ gitLink, demoLink }) => {
+type Props = {
+  gitLink?: string
+  demoLink?: string
+}
+
+const CardNav = ({ gitLink, demoLink }: Props) => {
   return (
     <div>
       {gitLink && (
@@ -13,11 +18,6 @@ const CardNav = ({ gitLink, demoLink }) => {
       )}
     </div>
   )
-}
-
-CardNav.defaultProps = {
-  gitLink: "https://github.com",
-  demoLink: "https://github.com",
 }
 
 export default CardNav

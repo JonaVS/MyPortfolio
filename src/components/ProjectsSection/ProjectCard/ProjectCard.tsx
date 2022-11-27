@@ -1,4 +1,5 @@
 import React from "react"
+import { Project } from "../../../types/project"
 import { useIntl } from "gatsby-plugin-react-intl"
 import CardNav from "./CardNav/CardNav"
 import CardImg from "./CardImg/CardImg"
@@ -8,8 +9,11 @@ import CardDescription from "./CardDescription/CardDescription"
 import CardTechStack from "./CardTechStack/CardTechStack"
 import * as styles from "../ProjectCard/projectCard.module.css"
 
+type Props = {
+  project: Project
+}
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project }: Props) => {
   const intl = useIntl()
   if (intl.locale === "es") project.description = project.descriptionES
 

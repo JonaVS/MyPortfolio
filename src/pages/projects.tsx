@@ -1,16 +1,24 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { Project } from "../types/project"
 import Layout from "../components/shared/Layout/Layout"
 import SEOComponent from "../components/shared/SEO/seo"
 import Container from "../components/shared/Container/Container"
 import ProjectsSection from "../components/ProjectsSection/ProjectsSection"
 import * as styles from "../styles/projects.module.css"
 
-export default function Projects({ data }) {
+type Props = {
+  data: {
+    dataJson: {
+      projectsData: Project[]
+    }
+  }
+}
+
+export default function Projects({ data }: Props) {
   const projects = data.dataJson.projectsData
-    
   return (
-    <Layout>      
+    <Layout>
       <SEOComponent
         title="Projects"
         description="JVS Projects"
