@@ -1,16 +1,16 @@
 import React from "react"
+import { AboutSectionWrapper } from "./aboutSection.styles"
 import AboutMeInfo from "./AboutMeInfo/AboutMeInfo"
 import KnowledgeInfo from "./KnowledgeInfo/KnowledgeInfo"
 import Divider from '../shared/Divider/Divider'
-import * as styles from "./aboutSection.module.css"
 
 const AboutSection = () => {
   return (
-    <section className={styles.contentWrapper}>
+    <AboutSectionWrapper>
       <AboutMeInfo />
       <Divider/>
       <KnowledgeInfo />
-    </section>
+    </AboutSectionWrapper>
   )
 }
 

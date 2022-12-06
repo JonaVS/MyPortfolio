@@ -37,6 +37,10 @@ const config: GatsbyConfig = {
         ignore: [`**/\.*`],
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {},
+    },
   ],
   siteMetadata: {
     title: "JVS Portfolio",
