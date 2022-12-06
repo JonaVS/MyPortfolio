@@ -1,5 +1,5 @@
-type TechIcon = {
-  id: number
+export type TechIcon = {
+  id?: number
   icon: JSX.Element
   text: string
 }
