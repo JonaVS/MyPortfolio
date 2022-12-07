@@ -1,7 +1,7 @@
 import React from "react"
 import { Project } from "../../../types/project"
+import { ProjectsList } from "./projectCardList.styles"
 import ProjectCard from "../ProjectCard/ProjectCard"
-import * as styles from "./projectCardList.module.css"
 
 type Props = {
   projects: Project[]
@@ -9,14 +9,11 @@ type Props = {
 
 const ProjectCardList = ({ projects }: Props) => {
   return (
-    <ul className={styles.projectCardLIst}>
+    <ProjectsList>
       {projects.map((project, idx) => (
-        <ProjectCard
-          key={idx}
-          project={project}
-        />
+        <ProjectCard key={idx} project={project} />
       ))}
-    </ul>
+    </ProjectsList>
   )
 }
 
