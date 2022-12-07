@@ -2,6 +2,7 @@ import React from "react"
 import { useIntl } from "gatsby-plugin-react-intl"
 import { ContactMessage } from "../../../types/contactMessage"
 import { Formik, Form, FormikHelpers } from "formik"
+import { FormWrapper } from "./contactForm.styles"
 import LoadingOverlay from "../../shared/LoadingOverlay/LoadingOverlay"
 import * as Yup from "yup"
 import Button from "../../shared/Button/Button"
@@ -9,7 +10,6 @@ import { BiRightArrow } from "react-icons/bi"
 import sendMail from "../../../services/formspree"
 import TextField from "./TextField/TextField"
 import { toast } from "react-toastify"
-import * as styles from "../ContactForm/contactForm.module.css"
 
 const ContactForm = () => {
   const intl = useIntl()
@@ -34,7 +34,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className={styles.formWrapper}>
+    <FormWrapper>
       <Formik
         initialValues={{ name: "", email: "", message: "" }}
         validationSchema={Yup.object({
@@ -78,7 +78,7 @@ const ContactForm = () => {
           </>
         )}
       </Formik>
-    </div>
+    </FormWrapper>
   )
 }
 
