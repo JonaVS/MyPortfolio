@@ -1,12 +1,16 @@
 import React from "react"
-import * as styles from "./homeContentWrapper.module.css"
+import { PositionedContainer } from "./homeContentWrapper.styles"
 
 type Props = {
   children?: React.ReactNode
 }
 
 const HomeContentWrapper = ({ children }: Props) => {
-  return <div className={styles.absolutePos}>{children}</div>
+  return (
+    <PositionedContainer>
+      {children}
+    </PositionedContainer>
+  )
 }
 
 export default HomeContentWrapper

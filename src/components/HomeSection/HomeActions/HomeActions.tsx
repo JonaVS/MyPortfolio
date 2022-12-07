@@ -1,11 +1,8 @@
 import React from "react"
+import { ActionsWrapper, ProjectsIcon, ProjectsLink, ResumeLink, ResumenIcon } from "./homeActions.styles"
 import { useIntl } from "gatsby-plugin-react-intl"
-import ButtonLink from "../../shared/ButtonLink/ButtonLink"
-import { BsBriefcase } from "react-icons/bs"
-import { AiOutlineArrowDown } from "react-icons/ai"
 import resume from "../../../downloads/JonathanVS-resume.pdf"
 import resumeES from "../../../downloads/JonathanVS-CV.pdf"
-import * as styles from "./homeActions.module.css"
 
 const HomeActions = () => {
   const intl = useIntl()
@@ -14,20 +11,16 @@ const HomeActions = () => {
   const pdfName = currentLang === "EN" ? "JonathanVS-Resume" : "JonathanVS-CV"
 
   return (
-    <div className={styles.actionsWrapper}>
-      <ButtonLink to="/projects" className={styles.projectsBtn}>
-        <BsBriefcase className={styles.icon} />
+    <ActionsWrapper>
+      <ProjectsLink to="/projects">
+        <ProjectsIcon />
         {intl.formatMessage({ id: "projects-link" })}
-      </ButtonLink>
-      <ButtonLink
-        href={pdfToDownload}
-        download={pdfName}
-        className={styles.cvBtn}
-      >
-        <AiOutlineArrowDown className={styles.icon} />
+      </ProjectsLink>
+      <ResumeLink href={pdfToDownload} download={pdfName}>
+        <ResumenIcon />
         {intl.formatMessage({ id: "cv-link" })}
-      </ButtonLink>
-    </div>
+      </ResumeLink>
+    </ActionsWrapper>
   )
 }
 
