@@ -6,7 +6,7 @@ const ICON_SIZE = 25
 export const contactLinks: IconLink[] = [
   {
     icon: <AiOutlineLinkedin size={ICON_SIZE} />,
-    href: "https://cr.linkedin.com/in/jonathan-vargas-solano-5798181a7",
+    href: "https://www.linkedin.com/in/jonathan-vargas-5798181a7/",
     isMail: false,
   },
   {
