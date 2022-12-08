@@ -14,14 +14,10 @@ const responsiveStyles = css`
 
 export const NavbarMenuWrapper = styled.div<NavbarMenuWrapper>`
   display: flex;
-  justify-content: start;
-  padding: 10px 10px;
   width: 100%;
 
   @media screen and (max-width: 960px) {
     position: fixed;
-    margin: 0px;
-    display: flex;
     flex-direction: column;
     flex-basis: 100%;
     width: 100%;

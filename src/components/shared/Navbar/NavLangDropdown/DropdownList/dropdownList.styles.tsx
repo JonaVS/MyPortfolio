@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 export const DropdownLangList = styled.ul`
   position: absolute;
-  top: 90%;
-  right: -1%;
+  top: 45px;
+  right: 0;
   padding: 0px;
   background-color: var(--PortGreen);
   width: 80px;
