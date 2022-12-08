@@ -1,4 +1,6 @@
-.button {
+import styled from "styled-components"
+
+export const StyledButton = styled.button`
   display: block;
   min-width: 200px;
   width: 50%;
@@ -12,12 +14,14 @@
   border-radius: 10px;
   color: var(--PortWhite);
   transition: background-color ease-in-out 0.5s;
-}
-.button:hover {
-  background-color: rgb(60, 133, 42);
-}
+  cursor: pointer;
 
-.button > svg {
-  vertical-align: middle;
-  margin-bottom: 4px;
-}
+  &:hover {
+    background-color: rgb(60, 133, 42);
+  }
+
+  svg {
+    vertical-align: middle;
+    margin-bottom: 4px;
+  }
+`

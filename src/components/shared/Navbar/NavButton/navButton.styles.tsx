@@ -1,16 +1,16 @@
-.menuBtn {
+import styled from "styled-components"
+
+export const NavMenuButton = styled.button`
   display: none;
   padding: 0px;
   background-color: transparent;
   border: none;
-}
 
-.menuIcon {
-  color: white;
-}
+  svg {
+    color: white;
+  }
 
-@media screen and (max-width: 960px) {
-  .menuBtn {
+  @media screen and (max-width: 960px) {
     display: block;
     position: absolute;
     right: 0;
@@ -19,4 +19,4 @@
     font-size: 1.8rem;
     cursor: pointer;
   }
-}
+`

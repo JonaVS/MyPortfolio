@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components"
-import ButtonLink from "../../shared/ButtonLink/ButtonLink"
 import { BsBriefcase } from "react-icons/bs"
 import { AiOutlineArrowDown } from "react-icons/ai"
+import { StyledGatsbyLink, StyledLink } from "../../shared/ButtonLink/buttonLink.styles"
 
 export const ActionsWrapper = styled.div`
   display: flex;
@@ -34,13 +34,13 @@ const baseLinksStyles = css`
   }
 `
 
-export const ProjectsLink = styled(ButtonLink)`
+export const ProjectsLink = styled(StyledGatsbyLink)`
   ${baseLinksStyles}
   background-color: rgb(58, 56, 54);
   color: white;
 `
 
-export const ResumeLink = styled(ButtonLink)`
+export const ResumeLink = styled(StyledLink)`
   ${baseLinksStyles}
   background-color: rgb(228, 228, 228);
   color: black;

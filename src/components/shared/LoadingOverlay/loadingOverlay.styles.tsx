@@ -1,4 +1,6 @@
-.overlay {
+import styled from "styled-components"
+
+export const Overlay = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -9,4 +11,4 @@
   background-color: rgba(0, 0, 0, 0.589);
   height: 100%;
   width: 100%;
-}
+`

@@ -1,9 +1,9 @@
 import React from "react"
+import { PageWrapper } from "./layout.styles"
 import Navbar from "../Navbar/Navbar"
 import { motion } from "framer-motion"
 import Footer from "../Footer/Footer"
 import { ToastContainer, Zoom } from "react-toastify"
-import * as styles from "../Layout/layout.module.css"
 
 type Props = {
   children?: React.ReactNode;
@@ -11,7 +11,7 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className={styles.pageWrapper}>
+    <PageWrapper>
       <Navbar />
       <motion.main
         initial={{
@@ -43,7 +43,7 @@ const Layout = ({ children }: Props) => {
         draggable
         transition={Zoom}
       />
-    </div>
+    </PageWrapper>
   )
 }
 

@@ -1,4 +1,6 @@
-.dropdownList {
+import styled from "styled-components"
+
+export const DropdownLangList = styled.ul`
   position: absolute;
   top: 90%;
   right: -1%;
@@ -9,15 +11,10 @@
   list-style-type: none;
   text-align: center;
   color: white;
-}
 
-@media only screen and (max-width: 960px) {
-  .dropdownList {
+  @media only screen and (max-width: 960px) {
     left: 0;
     right: 0;
     margin: auto;
   }
-}
-
-
-
+`

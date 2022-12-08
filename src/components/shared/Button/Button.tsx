@@ -1,5 +1,5 @@
 import React from "react"
-import * as styles from "./button.module.css"
+import { StyledButton } from "./button.styles"
 
 type Props = React.ComponentPropsWithoutRef<"button"> 
 
@@ -10,14 +10,13 @@ const Button = ({
   children,
 }: Props) => {
   return (
-    <button
+    <StyledButton
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={styles.button}
     >
       {children}
-    </button>
+    </StyledButton>
   )
 }
 

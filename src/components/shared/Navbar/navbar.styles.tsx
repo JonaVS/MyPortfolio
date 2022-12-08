@@ -1,4 +1,6 @@
-.nav {
+import styled from "styled-components"
+
+export const Nav = styled.nav`
   display: flex;
   align-items: center;
   position: fixed;
@@ -10,4 +12,4 @@
   opacity: 0.9;
   height: 80px;
   padding: 20px;
-}
+`

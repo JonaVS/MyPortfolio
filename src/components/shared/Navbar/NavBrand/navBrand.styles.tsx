@@ -1,4 +1,7 @@
-.brand {
+import styled from "styled-components"
+import { Link } from "gatsby-plugin-react-intl"
+
+export const BrandLink = styled(Link)`
   font-family: "Jura";
   margin-right: 10px;
   padding: 10px;
@@ -9,8 +12,8 @@
   background-color: var(--PortGreen);
   border-radius: 10%;
   transition: all 0.5s ease;
-}
 
-.brand:hover {
-  background-color: #2aa921b7;
-}
+  &:hover {
+    background-color: #2aa921b7;
+  }
+`

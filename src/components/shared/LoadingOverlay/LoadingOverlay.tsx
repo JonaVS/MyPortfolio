@@ -1,12 +1,12 @@
 import React from "react"
+import { Overlay } from "./loadingOverlay.styles"
 import Spinner from "./Spinner/Spinner"
-import * as styles from "../LoadingOverlay/loadingOverlay.module.css"
 
 const LoadingOverlay = () => {
   return (
-    <div className={styles.overlay}>
+    <Overlay>
       <Spinner />
-    </div>
+    </Overlay>
   )
 }
 
