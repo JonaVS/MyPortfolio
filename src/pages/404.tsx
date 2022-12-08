@@ -9,12 +9,14 @@ import {
   NotFoundContent,
   StaticImageStyles,
 } from "../pageStyles/404.styles"
+import { GlobalStyles } from "../globalStyles/globalStyles"
 
 const NotFoundPage = () => {
   const intl = useIntl()
 
   return (
     <>
+      <GlobalStyles/>
       <SEOComponent title="Error" description="Not Found Page" />
       <NotFoundContainer fluid>
         <NotFoundContent>

@@ -15,7 +15,6 @@ const sharedFontStyles = css`
 export const NotFoundContainer = styled(MainContainer)`
   ${sharedFlexStyles}
   height: 100vh;
-  padding: 0px 20px 0px 20px;
 `
 
 export const NotFoundContent = styled.div`
