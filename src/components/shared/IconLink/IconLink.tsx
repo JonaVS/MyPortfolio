@@ -1,7 +1,7 @@
 import React from "react"
 import { IconLink as IconLinkType } from "../../../types/iconLink"
 import { AiOutlineLinkedin } from "react-icons/ai"
-import * as styles from "./iconLink.module.css"
+import { IconAnchor } from "./iconLink.styles"
 
 type Props = IconLinkType & {
   basic?: boolean
@@ -14,14 +14,14 @@ const IconLink = ({
   basic = false,
 }: Props) => {
   return (
-    <a
+    <IconAnchor
+      basic={basic}
       href={href}
-      className={`${basic ? styles.basic : styles.linkIcon}`}
       target={!isMail ? "_blank" : undefined}
       rel={!isMail ? "noreferrer noopener" : undefined}
     >
       {icon}
-    </a>
+    </IconAnchor>
   )
 }
 

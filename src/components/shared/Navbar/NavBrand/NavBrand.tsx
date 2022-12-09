@@ -1,17 +1,12 @@
-import { Link } from "gatsby-plugin-react-intl"
 import React from "react"
-import * as styles from "./navBrand.module.css"
+import { BrandLink } from "./navBrand.styles"
 
 type Props = {
   text: string
 }
 
 const NavBrand = ({ text }: Props) => {
-  return (
-    <Link to="/" className={styles.brand}>
-      {text}
-    </Link>
-  )
+  return <BrandLink to="/">{text}</BrandLink>
 }
 
 export default NavBrand

@@ -1,5 +1,5 @@
 import React from "react"
-import * as styles from "./title.module.css"
+import { GeneralTitle } from "./title.styles"
 
 type Props = {
   text?: string
@@ -7,9 +7,9 @@ type Props = {
 
 const Title = ({ text = 'default text ' }: Props) => {
   return (
-    <h1 className={styles.title}>
+    <GeneralTitle>
       {text}
-    </h1>
+    </GeneralTitle>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from "react"
 import { IconLink as IconLinkType } from "../../../../types/iconLink"
+import { IconLinksList } from "./iconLinkGroup.styles"
 import IconLink from "../IconLink"
-import * as styles from "./iconLinkGroup.module.css"
 
 type Props = {
   links: IconLinkType[]
@@ -9,13 +9,13 @@ type Props = {
 
 const IconLinkGroup = ({ links = [] }: Props) => {
   return (
-    <ul className={styles.linksWrapper}>
+    <IconLinksList>
       {links.map((link, idx) => (
         <li key={idx}>
           <IconLink icon={link.icon} href={link.href} isMail={link.isMail} />
         </li>
       ))}
-    </ul>
+    </IconLinksList>
   )
 }
 

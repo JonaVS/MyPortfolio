@@ -3,9 +3,7 @@ import { graphql } from "gatsby"
 import { Project } from "../types/project"
 import Layout from "../components/shared/Layout/Layout"
 import SEOComponent from "../components/shared/SEO/seo"
-import Container from "../components/shared/Container/Container"
 import ProjectsSection from "../components/ProjectsSection/ProjectsSection"
-import * as styles from "../styles/projects.module.css"
 
 type Props = {
   data: {
@@ -24,9 +22,7 @@ export default function Projects({ data }: Props) {
         description="JVS Projects"
         slug="/projects"
       />
-      <Container fluid={false} className={styles.mainCont}>
-        <ProjectsSection projects={projects} />
-      </Container>
+      <ProjectsSection projects={projects} />
     </Layout>
   )
 }

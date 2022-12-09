@@ -1,5 +1,5 @@
 import React from "react"
-import * as styles from "./navMenu.module.css"
+import { NavbarMenuWrapper } from "./navMenu.styles"
 
 type Props = {
   responsiveMenu: boolean
@@ -8,13 +8,9 @@ type Props = {
 
 const NavMenu = ({ responsiveMenu, children }: Props) => {
   return (
-    <ul
-      className={`${styles.navMenu} ${
-        responsiveMenu ? styles.responsiveActive : ''
-      }`}
-    >
+    <NavbarMenuWrapper responsiveMenu={responsiveMenu}>
       {children}
-    </ul>
+    </NavbarMenuWrapper>
   )
 }
 

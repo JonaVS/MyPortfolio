@@ -1,4 +1,5 @@
 import React from "react"
+import { TechIcon } from "../../../../types/techIcon"
 import HtmlIcon from "../../../shared/DevIcons/HtmlIcon"
 import CssIcon from "../../../shared/DevIcons/CssIcon"
 import BsIcon from "../../../shared/DevIcons/BsIcon"

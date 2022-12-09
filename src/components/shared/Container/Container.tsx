@@ -1,17 +1,16 @@
 import React from "react"
-import * as styles from "./container.module.css"
+import { MainContainer } from "./container.styles"
 
 type Props = {
   fluid?: boolean
   children?: React.ReactNode
-  className?: string
 }
 
-const Container = ({ children, fluid = false, className = "" }: Props) => {
+const Container = ({ children, fluid = false }: Props) => {
   return (
-    <div className={`${fluid ? styles.fluid : styles.container} ${className}`}>
+    <MainContainer fluid={fluid}>
       {children}
-    </div>
+    </MainContainer>
   )
 }
 

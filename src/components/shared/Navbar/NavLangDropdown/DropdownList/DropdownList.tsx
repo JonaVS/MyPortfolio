@@ -1,7 +1,7 @@
 import React from "react"
 import { LangOption } from "../../../../../types/langOption"
+import { DropdownLangList } from "./dropdownList.styles"
 import DropdownItem from "../DropdownItem/DropdownItem"
-import * as styles from "./dropdownList.module.css"
 
 type Props = {
   options: LangOption[]
@@ -9,11 +9,11 @@ type Props = {
 
 const DropdownList = ({ options }: Props) => {
   return (
-    <ul className={styles.dropdownList}>
+    <DropdownLangList>
       {options.map(option => (
         <DropdownItem key={option.id} option={option} />
       ))}
-    </ul>
+    </DropdownLangList>
   )
 }
 

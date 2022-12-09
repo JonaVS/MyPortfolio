@@ -1,13 +1,13 @@
 import React from "react"
 import { Project } from "../../../types/project"
 import { useIntl } from "gatsby-plugin-react-intl"
+import { ProjectCardWrapper } from "./projectCard.styles"
 import CardNav from "./CardNav/CardNav"
 import CardImg from "./CardImg/CardImg"
 import CardTitle from "./CardTitle/CardTitle"
 import CardBody from "./CardBody/CardBody"
 import CardDescription from "./CardDescription/CardDescription"
 import CardTechStack from "./CardTechStack/CardTechStack"
-import * as styles from "../ProjectCard/projectCard.module.css"
 
 type Props = {
   project: Project
@@ -18,7 +18,7 @@ const ProjectCard = ({ project }: Props) => {
   if (intl.locale === "es") project.description = project.descriptionES
 
   return (
-    <li className={styles.wrapper}>
+    <ProjectCardWrapper>
         <CardImg gatsbyImg={project.image.childImageSharp.gatsbyImageData} />
         <CardBody>
           <CardTitle title={project.title}>
@@ -27,7 +27,7 @@ const ProjectCard = ({ project }: Props) => {
           <CardDescription description={project.description} />
           <CardTechStack techStack={project.techStack}/>
         </CardBody>
-    </li>
+    </ProjectCardWrapper>
   )
 }
 

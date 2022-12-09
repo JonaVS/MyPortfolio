@@ -1,19 +1,16 @@
 import React from "react"
-import ReactIcon from "../../../shared/DevIcons/ReactIcon"
-import * as styles from "./techIcon.module.css"
+import { TechIcon as TechIconType } from "../../../../types/techIcon"
+import { TechIconListItem, TechIconText } from "./techIcon.styles"
 
-const TechIcon = ({ icon, text }) => {
+type Props = TechIconType
+
+const TechIcon = ({ icon, text }: Props) => {
   return (
-    <li className={styles.listItem}>
+    <TechIconListItem>
       {icon}
-      <span className={styles.iconText}>{text}</span>
-    </li>
+      <TechIconText>{text}</TechIconText>
+    </TechIconListItem>
   )
-}
-
-TechIcon.defaultProps = {
-  text: "React",
-  icon: <ReactIcon/>
 }
 
 export default TechIcon

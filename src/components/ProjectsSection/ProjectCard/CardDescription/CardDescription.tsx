@@ -1,12 +1,12 @@
 import React from "react"
-import * as styles from "./cardDescription.module.css"
+import { DescriptionText } from "./cardDescription.styles"
 
 type Props = {
   description: string
 }
 
 const CardDescription = ({ description }: Props) => {
-  return <p className={styles.cardDesc}>{description}</p>
+  return <DescriptionText>{description}</DescriptionText>
 }
 
 export default CardDescription

@@ -1,5 +1,5 @@
 import React from "react"
-import * as styles from "./cardTitle.module.css"
+import { CardTitleText, TitleWrapper } from "./cardTitle.styles"
 
 type Props = {
   title: string
@@ -8,10 +8,10 @@ type Props = {
 
 const CardTitle = ({ title, children }: Props) => {
   return (
-    <div className={styles.titleWrapper}>
-      <h2 className={styles.cardTitle}>{title}</h2>
+    <TitleWrapper>
+      <CardTitleText>{title}</CardTitleText>
       {children}
-    </div>
+    </TitleWrapper>
   )
 }
 

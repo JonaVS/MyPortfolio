@@ -1,12 +1,21 @@
-import React, { ClassAttributes, InputHTMLAttributes, TextareaHTMLAttributes } from "react"
+import React, {
+  ClassAttributes,
+  InputHTMLAttributes,
+  TextareaHTMLAttributes,
+} from "react"
 import { useField, FieldHookConfig } from "formik"
-import * as styles from '../contactForm.module.css'
+import {
+  InputError,
+  InputLabel,
+  InputWrapper,
+  TextAreaFieldInput,
+  TextFieldInput,
+} from "./textField.styles"
 
 type Props = FieldHookConfig<string> &
   InputHTMLAttributes<HTMLInputElement> &
   TextareaHTMLAttributes<HTMLTextAreaElement> &
-  ClassAttributes<HTMLInputElement & HTMLTextAreaElement > & 
-  {
+  ClassAttributes<HTMLInputElement & HTMLTextAreaElement> & {
     label: string
   }
 
@@ -14,19 +23,17 @@ const TextField = ({ label, ...props }: Props) => {
   const [field, meta] = useField(props)
 
   return (
-    <>
-      <div className={styles.inputWrapper}>
-        <label htmlFor={props.id || props.name}>{label}</label>
-        {props.type === "textarea" ? (
-          <textarea {...field} {...props}  />
-        ) : (
-          <input {...field} {...props}  />
-        )}
-        {meta.touched && meta.error ? (
-          <div className={styles.error}>{meta.error}</div>
-        ) : null}
-      </div>
-    </>
+    <InputWrapper>
+      <InputLabel htmlFor={props.id || props.name}>{label}</InputLabel>
+      {props.type === "textarea" ? (
+        <TextAreaFieldInput {...field} {...props} />
+      ) : (
+        <TextFieldInput {...field} {...props} />
+      )}
+      {meta.touched && meta.error ? (
+        <InputError>{meta.error}</InputError>
+      ) : null}
+    </InputWrapper>
   )
 }
 

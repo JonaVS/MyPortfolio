@@ -1,5 +1,5 @@
 import React from "react"
-import * as styles from "./infoWrapper.module.css"
+import { ContentWrapper } from "./infoWrapper.styles"
 
 type Props = {
   children?: React.ReactNode | React.ReactNode[]  
@@ -7,9 +7,9 @@ type Props = {
 
 const InfoWrapper = ({ children }: Props) => {
   return (
-    <div className={styles.infoWrapper}>
+    <ContentWrapper>
       {children}
-    </div>
+    </ContentWrapper>
   )
 }
 

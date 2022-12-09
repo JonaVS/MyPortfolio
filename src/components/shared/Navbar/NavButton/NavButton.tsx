@@ -1,21 +1,17 @@
 import React from "react"
 import { FaTimes, FaBars } from "react-icons/fa"
-import * as styles from "./navButton.module.css"
+import { NavMenuButton } from "./navButton.styles"
 
 type Props = {
-  showResponsiveMenu: boolean,
+  showResponsiveMenu: boolean
   handleShowMenu: () => void
 }
 
-const NavButton = ({ showResponsiveMenu, handleShowMenu  }: Props) => {
+const NavButton = ({ showResponsiveMenu, handleShowMenu }: Props) => {
   return (
-    <button className={styles.menuBtn} onClick={handleShowMenu}>
-      {showResponsiveMenu ? (
-        <FaTimes className={styles.menuIcon} />
-      ) : (
-        <FaBars className={styles.menuIcon} />
-      )}
-    </button>
+    <NavMenuButton onClick={handleShowMenu}>
+      {showResponsiveMenu ? <FaTimes /> : <FaBars />}
+    </NavMenuButton>
   )
 }
 

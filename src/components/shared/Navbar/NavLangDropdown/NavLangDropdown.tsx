@@ -1,11 +1,11 @@
 import React from "react"
 import { useIntl } from "gatsby-plugin-react-intl"
 import useComponentVisible from "../../../../hooks/useComponentVisible"
+import { DropdownButton, DropdownContainer } from "./navLangDropdown.styles"
 import { options } from "./options"
 import { MdLanguage } from "react-icons/md"
 import DropdownList from "./DropdownList/DropdownList"
-import { CSSTransition } from "react-transition-group"
-import * as styles from "./navLangDropdown.module.css"
+
 
 const NavLangDropdown = () => {
   const intl = useIntl()
@@ -20,27 +20,13 @@ const NavLangDropdown = () => {
   }
 
   return (
-    <div ref={ref} className={styles.container}>
-      <button className={styles.dropdownBtn} onClick={handleClick}>
-        {<MdLanguage className="nav-icon" />}
+    <DropdownContainer ref={ref}>
+      <DropdownButton onClick={handleClick}>
+        {<MdLanguage />}
         {currentLang}
-      </button>
-      <CSSTransition
-        in={isComponentVisible}
-        timeout={200}
-        unmountOnExit
-        classNames={{
-          enter: styles.enter,
-          enterActive: styles.enterActive,
-          exit: styles.exit,
-          exitActive: styles.exitActive,
-        }}
-      >
-        <DropdownList
-          options={options}
-        />
-      </CSSTransition>
-    </div>
+      </DropdownButton>
+      {isComponentVisible && <DropdownList options={options} />}
+    </DropdownContainer>
   )
 }
 

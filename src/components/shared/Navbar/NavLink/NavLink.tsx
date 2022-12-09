@@ -1,6 +1,5 @@
-import { Link } from "gatsby-plugin-react-intl"
 import React from "react"
-import * as styles from "./navLink.module.css"
+import { NavbarLink } from "./navLink.styles"
 
 type Props = {
   linkText: string,
@@ -11,10 +10,10 @@ type Props = {
 const NavLink = ({ linkText, to, icon }: Props) => {
   return (
     <li>
-      <Link to={to} className={styles.link}>
+      <NavbarLink to={to}>
         {icon && icon}
         {linkText}
-      </Link>
+      </NavbarLink>
     </li>
   )
 }

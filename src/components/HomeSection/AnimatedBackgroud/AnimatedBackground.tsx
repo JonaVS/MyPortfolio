@@ -1,15 +1,15 @@
 import React from "react"
-import * as styles from "../AnimatedBackgroud/animatedBackground.module.css"
+import { BackgroundWrapper, Circle, CirclesWrapper } from "./animatedBackground.styles"
 
 const AnimatedBackground = () => {
   return (
-    <div className={styles.area}>
-      <ul className={styles.circles}>
+    <BackgroundWrapper>
+      <CirclesWrapper>
         {Array.from({ length: 10 }).map<JSX.Element>((_, idx:number) => (
-          <li key={idx}></li>
+          <Circle key={idx}/>
         ))}
-      </ul>
-    </div>
+      </CirclesWrapper>
+    </BackgroundWrapper>
   )
 }
 

@@ -1,7 +1,6 @@
 import React from "react"
 import { LangOption } from "../../../../../types/langOption"
-import { Link } from "gatsby"
-import * as styles from "./dropdownItem.module.css"
+import { DropdownLink, DropdownListItem } from "./dropdownItem.styles"
 
 type Props = {
   option: LangOption
@@ -9,11 +8,11 @@ type Props = {
 
 const DropDownItem = ({ option }: Props) => {
   return (
-    <li className={styles.item}>
-      <Link className={styles.link} to={option.url}>
+    <DropdownListItem>
+      <DropdownLink to={option.url}>
         {option.lang}
-      </Link>
-    </li>
+      </DropdownLink>
+    </DropdownListItem>
   )
 }
 

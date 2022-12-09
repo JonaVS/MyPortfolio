@@ -1,19 +1,19 @@
 import React from "react"
+import { Section } from "./homeSection.styles"
 import AnimatedBackground from "./AnimatedBackgroud/AnimatedBackground"
 import HomeContentWrapper from "./HomeContentWrapper/HomeContentWrapper"
 import WelcomeMsg from "./WelcomeMsg/WelcomeMsg"
 import HomeActions from "./HomeActions/HomeActions"
-import * as styles from "./homeSection.module.css"
 
 const HomeSection = () => {
   return (
-    <section className={styles.homeSection}>
+    <Section>
       <AnimatedBackground />
       <HomeContentWrapper>
         <WelcomeMsg />
         <HomeActions />
       </HomeContentWrapper>
-    </section>
+    </Section>
   )
 }
 

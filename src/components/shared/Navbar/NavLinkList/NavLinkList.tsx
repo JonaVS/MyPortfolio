@@ -1,7 +1,7 @@
 import React from "react"
 import { NavLink as NavLinkType } from "../../../../types/navLink"
+import { LinkList } from "./navListLink.styles"
 import NavLink from "../NavLink/NavLink"
-import * as styles from "./navLinkList.module.css"
 
 type Props = {
   navLinks: NavLinkType[]
@@ -9,7 +9,7 @@ type Props = {
 
 const NavLinkList = ({ navLinks }: Props) => {
   return (
-    <ul className={styles.linkList}>
+    <LinkList>
       {navLinks.map((link, idx) => (
         <NavLink
           key={idx}
@@ -18,7 +18,7 @@ const NavLinkList = ({ navLinks }: Props) => {
           to={link.to}
         />
       ))}
-    </ul>
+    </LinkList>
   )
 }
 

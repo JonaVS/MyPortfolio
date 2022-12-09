@@ -1,12 +1,12 @@
 import React from "react"
-import * as styles from "./cardBody.module.css"
+import { Body } from "./cardBody.styles"
 
 type Props = {
   children: React.ReactNode | React.ReactNode[]
 }
 
 const CardBody = ({ children }: Props) => {
-  return <div className={styles.cardBody}>{children}</div>
+  return <Body>{children}</Body>
 }
 
 export default CardBody
