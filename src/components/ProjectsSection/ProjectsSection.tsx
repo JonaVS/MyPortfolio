@@ -1,16 +1,38 @@
 import React from "react"
-import { Project } from "../../types/project"
 import { useIntl } from "gatsby-plugin-react-intl"
+import { useStaticQuery, graphql } from "gatsby"
+import { ProjectData } from "../../types/GraphqlQueriesTypes/ProjectData"
 import { ProjectsContainer } from "./projectsSection.styles"
 import Title from "../shared/Title/Title"
 import ProjectCardList from "./ProjectCardList/ProjectCardList"
 
-type Props = {
-  projects: Project[]
-}
-
-const ProjectsSection = ({ projects }: Props) => {
+const ProjectsSection = () => {
   const intl = useIntl()
+  const data = useStaticQuery<ProjectData>(graphql`
+  query ProjectsQuery {
+    allContentfulProject(sort: {position: ASC}) {
+      nodes {
+        id
+        image {
+          gatsbyImageData(placeholder: BLURRED, quality: 80)
+        }
+        title
+        description
+        gitLink
+        demoLink
+        techStack
+        node_locale
+      }
+    }
+  }
+`)
+
+const {allContentfulProject: {nodes}} = data
+const projects =
+  intl.locale === "en"
+    ? nodes.filter(project => project.node_locale === "en-US")
+    : nodes.filter(project => project.node_locale === "es-CR")
+
   return (
     <ProjectsContainer fluid={false}>
       <section>

@@ -7,13 +7,13 @@ type Props = {
   demoLink?: string
 }
 
-const CardNav = ({ gitLink, demoLink }: Props) => {
+const CardNav = ({ gitLink, demoLink='default' }: Props) => {
   return (
     <div>
       {gitLink && (
         <IconLink icon={<FiGithub size={20} />} href={gitLink} basic />
       )}
-      {demoLink && (
+      {(demoLink !== 'default') && (
         <IconLink icon={<FiEye size={20} />} href={demoLink} basic />
       )}
     </div>
