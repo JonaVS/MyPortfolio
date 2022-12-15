@@ -41,6 +41,13 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-styled-components`,
       options: {},
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `xe3i6o13q94f`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
   ],
   siteMetadata: {
     title: "JVS Portfolio",
