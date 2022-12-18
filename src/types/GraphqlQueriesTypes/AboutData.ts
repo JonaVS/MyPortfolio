@@ -1,5 +1,5 @@
 export type AboutData = {
-  allContentfulAboutMe: { nodes: AboutNode[] }
+  aboutInfo: { nodes: AboutNode[] }
 }
 
 export type KnowledgeData = {
@@ -15,8 +15,7 @@ export type EducationData = {
 }
 
 type AboutNode = {
-  node_locale: string
-  about: { about: string }
+  about: { data: { html: string } }
 }
 
 export type TechNode = {

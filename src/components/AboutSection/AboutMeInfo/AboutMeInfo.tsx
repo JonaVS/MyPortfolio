@@ -4,29 +4,32 @@ import { graphql, useStaticQuery } from "gatsby"
 import { AboutData } from "../../../types/GraphqlQueriesTypes/AboutData"
 import InfoWrapper from "../InfoWrapper/InfoWrapper"
 import Title from "../../shared/Title/Title"
-import { ReactMarkdown } from "react-markdown/lib/react-markdown"
+import parse from "html-react-parser"
 
 const AboutMeInfo = () => {
   const intl = useIntl()
-  const data = useStaticQuery<AboutData>(graphql`
+  const queryData = useStaticQuery<AboutData>(graphql`
     query AboutDataQuery {
-      allContentfulAboutMe {
+      aboutInfo: allContentfulAboutMe {
         nodes {
           about {
-            about
+            data: childMarkdownRemark {
+              html
+            }
           }
         }
       }
     }
   `)
-   
-  const {allContentfulAboutMe: {nodes}} = data
-  const {about:{about}} = intl.locale === "en" ? nodes[0] : nodes[1]
 
+   
+  const {aboutInfo: {nodes}} = queryData
+  const {about:{data:{html}}} = intl.locale === "en" ? nodes[0] : nodes[1]
+  
   return (
     <InfoWrapper>
       <Title text={intl.formatMessage({ id: "about-meTitle" })} />
-      <ReactMarkdown>{about}</ReactMarkdown>
+      {parse(html)}
     </InfoWrapper>
   )
 }
