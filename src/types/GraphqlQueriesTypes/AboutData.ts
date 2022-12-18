@@ -7,7 +7,11 @@ export type KnowledgeData = {
 }
 
 export type ExperienceData = {
-  experience: {nodes: ExperienceNode[]}
+  experience: { nodes: ExperienceNode[] }
+}
+
+export type EducationData = {
+  education: { nodes: EducationNode[] }
 }
 
 type AboutNode = {
@@ -28,4 +32,11 @@ export type ExperienceNode = {
   title: string
   node_locale: string
   description: { data: { html: string } }
+}
+
+export type EducationNode = {
+  id: string
+  node_locale: string
+  institution: string
+  description: { data: string }
 }
