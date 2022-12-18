@@ -9,9 +9,9 @@ import TechIconList from "./TechIconList/TechIconList"
 const KnowledgeInfo = () => {
   const intl = useIntl()
 
-  const {allContentfulTechnologie:{nodes}} = useStaticQuery<KnowledgeData>(graphql`
-  query knowledgeQuery {
-    allContentfulTechnologie(
+  const {technologies:{nodes}} = useStaticQuery<KnowledgeData>(graphql`
+  query technologiesQuery {
+    technologies: allContentfulTechnologie(
       filter: {node_locale: {eq: "en-US"}}
       sort: {order: ASC}
     ) {
@@ -19,7 +19,7 @@ const KnowledgeInfo = () => {
         id
         name
         order
-        svg {
+        icon: svg {
           svg
         }
       }

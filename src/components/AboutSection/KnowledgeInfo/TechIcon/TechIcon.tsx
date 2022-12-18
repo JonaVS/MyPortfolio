@@ -5,10 +5,10 @@ import parse from 'html-react-parser';
 
 type Props = TechNode
 
-const TechIcon = ({ svg, name }: Props) => {
+const TechIcon = ({ icon, name }: Props) => {
   return (
     <TechIconListItem>
-      {parse(svg.svg)}
+      {parse(icon.svg)}
       <TechIconText>{name}</TechIconText>
     </TechIconListItem>
   )

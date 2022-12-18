@@ -11,7 +11,7 @@ const TechIconList = ({icons}: Props) => {
   return (
     <TechIconGridList>
       {icons.map(icon => (
-        <TechIcon key={icon.id} svg={icon.svg} name={icon.name} />
+        <TechIcon key={icon.id} icon={icon.icon} name={icon.name} />
       ))}
     </TechIconGridList>
   )

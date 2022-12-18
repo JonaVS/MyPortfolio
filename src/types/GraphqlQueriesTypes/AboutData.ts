@@ -3,7 +3,7 @@ export type AboutData = {
 }
 
 export type KnowledgeData = {
-  allContentfulTechnologie: { nodes: TechNode[] }
+  technologies: { nodes: TechNode[] }
 }
 
 export type ExperienceData = {
@@ -21,7 +21,7 @@ type AboutNode = {
 export type TechNode = {
   id?: string
   name: string
-  svg: { svg: string }
+  icon: { svg: string }
 }
 
 export type ExperienceNode = {
