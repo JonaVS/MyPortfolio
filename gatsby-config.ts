@@ -48,6 +48,13 @@ const config: GatsbyConfig = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        gfm: true,
+        plugins: [],
+      },
+    },
   ],
   siteMetadata: {
     title: "JVS Portfolio",
