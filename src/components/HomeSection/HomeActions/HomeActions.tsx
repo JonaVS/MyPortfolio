@@ -1,14 +1,22 @@
 import React from "react"
 import { ActionsWrapper, ProjectsIcon, ProjectsLink, ResumeLink, ResumeIcon } from "./homeActions.styles"
 import { useIntl } from "gatsby-plugin-react-intl"
-import resume from "../../../downloads/JonathanVS-resume.pdf"
-import resumeES from "../../../downloads/JonathanVS-CV.pdf"
+import { graphql, useStaticQuery } from "gatsby"
+import { ResumeData } from "../../../types/GraphqlQueriesTypes/ResumeData"
 
 const HomeActions = () => {
   const intl = useIntl()
-  const currentLang = intl.locale.toUpperCase()
-  const pdfToDownload = currentLang === "EN" ? resume : resumeES
-  const pdfName = currentLang === "EN" ? "JonathanVS-Resume" : "JonathanVS-CV"
+  const {resumes:{nodes}} = useStaticQuery<ResumeData>(graphql`
+    query resumesQuery {
+      resumes: allContentfulAsset(filter: { description: { eq: "Resume" } }) {
+        nodes {
+          url
+        }
+      }
+    }
+  `)
+
+  const resume = intl.locale === "en" ? nodes[0] : nodes[1]
 
   return (
     <ActionsWrapper>
@@ -16,7 +24,7 @@ const HomeActions = () => {
         <ProjectsIcon />
         {intl.formatMessage({ id: "projects-link" })}
       </ProjectsLink>
-      <ResumeLink href={pdfToDownload} download={pdfName}>
+      <ResumeLink href={resume.url} target="_blank" rel="noopener noreferrer">
         <ResumeIcon />
         {intl.formatMessage({ id: "cv-link" })}
       </ResumeLink>
