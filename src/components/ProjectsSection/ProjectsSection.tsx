@@ -10,7 +10,7 @@ const ProjectsSection = () => {
   const intl = useIntl()
   const data = useStaticQuery<ProjectData>(graphql`
   query ProjectsQuery {
-    allContentfulProject(sort: {position: ASC}) {
+    projects:allContentfulProject(sort: {position: ASC}) {
       nodes {
         id
         image {
@@ -27,7 +27,7 @@ const ProjectsSection = () => {
   }
 `)
 
-const {allContentfulProject: {nodes}} = data
+const {projects: {nodes}} = data
 const projects =
   intl.locale === "en"
     ? nodes.filter(project => project.node_locale === "en-US")

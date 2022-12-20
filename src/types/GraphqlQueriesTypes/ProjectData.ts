@@ -1,7 +1,7 @@
 import { IGatsbyImageData } from "gatsby-plugin-image"
 
 export type ProjectData = {
-  allContentfulProject: { nodes: ProjectNode[] }
+  projects: { nodes: ProjectNode[] }
 }
 
 export type ProjectNode = {
