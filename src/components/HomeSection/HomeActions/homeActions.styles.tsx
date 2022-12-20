@@ -54,6 +54,6 @@ const iconBaseStyles = css`
 export const ProjectsIcon = styled(BsBriefcase)`
   ${iconBaseStyles}
 `
-export const ResumenIcon = styled(AiOutlineArrowDown)`
+export const ResumeIcon = styled(AiOutlineArrowDown)`
   ${iconBaseStyles}
 `

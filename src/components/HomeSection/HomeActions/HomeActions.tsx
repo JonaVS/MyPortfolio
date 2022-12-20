@@ -1,5 +1,5 @@
 import React from "react"
-import { ActionsWrapper, ProjectsIcon, ProjectsLink, ResumeLink, ResumenIcon } from "./homeActions.styles"
+import { ActionsWrapper, ProjectsIcon, ProjectsLink, ResumeLink, ResumeIcon } from "./homeActions.styles"
 import { useIntl } from "gatsby-plugin-react-intl"
 import resume from "../../../downloads/JonathanVS-resume.pdf"
 import resumeES from "../../../downloads/JonathanVS-CV.pdf"
@@ -17,7 +17,7 @@ const HomeActions = () => {
         {intl.formatMessage({ id: "projects-link" })}
       </ProjectsLink>
       <ResumeLink href={pdfToDownload} download={pdfName}>
-        <ResumenIcon />
+        <ResumeIcon />
         {intl.formatMessage({ id: "cv-link" })}
       </ResumeLink>
     </ActionsWrapper>
