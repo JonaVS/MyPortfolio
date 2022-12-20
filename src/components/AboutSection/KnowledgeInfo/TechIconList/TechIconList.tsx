@@ -1,13 +1,17 @@
 import React from "react"
+import { TechNode } from "../../../../types/GraphqlQueriesTypes/AboutData";
 import { TechIconGridList } from "./techIconList.styles"
-import { icons } from "./Icons"
 import TechIcon from "../TechIcon/TechIcon"
 
-const TechIconList = () => {
+type Props = {
+  icons: TechNode[]
+}
+
+const TechIconList = ({icons}: Props) => {
   return (
     <TechIconGridList>
-      {icons.map(item => (
-        <TechIcon key={item.id} icon={item.icon} text={item.text} />
+      {icons.map(icon => (
+        <TechIcon key={icon.id} icon={icon.icon} name={icon.name} />
       ))}
     </TechIconGridList>
   )

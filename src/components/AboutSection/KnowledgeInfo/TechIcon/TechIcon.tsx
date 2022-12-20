@@ -1,14 +1,15 @@
 import React from "react"
-import { TechIcon as TechIconType } from "../../../../types/techIcon"
+import { TechNode } from "../../../../types/GraphqlQueriesTypes/AboutData"
 import { TechIconListItem, TechIconText } from "./techIcon.styles"
+import parse from 'html-react-parser';
 
-type Props = TechIconType
+type Props = TechNode
 
-const TechIcon = ({ icon, text }: Props) => {
+const TechIcon = ({ icon, name }: Props) => {
   return (
     <TechIconListItem>
-      {icon}
-      <TechIconText>{text}</TechIconText>
+      {parse(icon.svg)}
+      <TechIconText>{name}</TechIconText>
     </TechIconListItem>
   )
 }

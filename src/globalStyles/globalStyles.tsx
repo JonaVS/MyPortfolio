@@ -97,7 +97,7 @@ p {
     font-size: 1.3rem;
   }
   p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   h1 {

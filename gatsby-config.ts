@@ -24,14 +24,6 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `data`,
-        path: `${__dirname}/src/data/`,
-        ignore: [`**/\.*`],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: `images`,
         path: `${__dirname}/src/images/`,
         ignore: [`**/\.*`],
@@ -40,6 +32,20 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {},
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `xe3i6o13q94f`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        gfm: true,
+        plugins: [],
+      },
     },
   ],
   siteMetadata: {

@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 import { BsBriefcase } from "react-icons/bs"
-import { AiOutlineArrowDown } from "react-icons/ai"
+import { IoDocumentTextOutline } from "react-icons/io5"
 import { StyledGatsbyLink, StyledLink } from "../../shared/ButtonLink/buttonLink.styles"
 
 export const ActionsWrapper = styled.div`
@@ -54,6 +54,6 @@ const iconBaseStyles = css`
 export const ProjectsIcon = styled(BsBriefcase)`
   ${iconBaseStyles}
 `
-export const ResumenIcon = styled(AiOutlineArrowDown)`
+export const ResumeIcon = styled(IoDocumentTextOutline)`
   ${iconBaseStyles}
 `
