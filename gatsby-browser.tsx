@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.min.css"
 import "@fontsource/jura/300.css"
 import "@fontsource/anton"
 import "@fontsource/abel"
+import "@fontsource/birthstone-bounce"
 
 export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
   element,

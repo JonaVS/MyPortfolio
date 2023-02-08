@@ -1,6 +1,6 @@
 import React from "react"
 import { GlobalStyles } from "../../../globalStyles/globalStyles"
-import { PageWrapper } from "./layout.styles"
+import { ContentWrapper } from "./layout.styles"
 import Navbar from "../Navbar/Navbar"
 import { motion } from "framer-motion"
 import Footer from "../Footer/Footer"
@@ -14,8 +14,8 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <GlobalStyles />
-      <PageWrapper>
-        <Navbar />
+      <Navbar />
+      <ContentWrapper>
         <motion.main
           initial={{
             opacity: 0,
@@ -37,7 +37,6 @@ const Layout = ({ children }: Props) => {
         >
           {children}
         </motion.main>
-        <Footer />
         <ToastContainer
           role="alert"
           position="bottom-center"
@@ -46,7 +45,8 @@ const Layout = ({ children }: Props) => {
           draggable
           transition={Zoom}
         />
-      </PageWrapper>
+      </ContentWrapper>
+      <Footer />
     </>
   )
 }

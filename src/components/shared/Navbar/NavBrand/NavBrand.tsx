@@ -6,7 +6,7 @@ type Props = {
 }
 
 const NavBrand = ({ text }: Props) => {
-  return <BrandLink to="/">{text}</BrandLink>
+  return <BrandLink to="/"><span>&#60;</span>{text}<span>/&#62;</span></BrandLink>
 }
 
 export default NavBrand

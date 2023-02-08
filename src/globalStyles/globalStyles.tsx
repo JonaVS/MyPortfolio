@@ -20,10 +20,14 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  height: 100%;
   margin: 0px;
   scrollbar-color: rgb(83, 83, 83) #f1f1f1;
   scrollbar-width: thin;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
 }
 
 ::-webkit-scrollbar {

@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <NavBrand text="JVS" />
+      <NavBrand text="JonaVS" />
       <NavButton
         showResponsiveMenu={responsiveMenu}
         handleShowMenu={handleResponsiveMenu}
