@@ -1,19 +1,29 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Link } from "gatsby-plugin-react-intl"
 
+const sharedStyles = css`
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+`
 export const BrandLink = styled(Link)`
-  font-family: "Jura";
+  display: flex;
+  align-items: center;
+  font-family: "Birthstone Bounce";
+  font-weight: bold;
   margin-right: 10px;
   padding: 10px;
-  font-weight: 600;
-  color: white;
+  color: var(--PortWhiteMuted);
   text-decoration: none;
   white-space: nowrap;
-  background-color: var(--PortGreen);
   border-radius: 10%;
-  transition: all 0.5s ease;
+  background: -webkit-linear-gradient(#ececec, rgb(97, 145, 87));
+  ${sharedStyles};
 
-  &:hover {
-    background-color: #2aa921b7;
+  span {
+    font-size: 28px;
+    color: var(--PortGreen);
+    background: -webkit-linear-gradient(var(--PortGreen), var(--PortGreen));
+    ${sharedStyles};
   }
 `
