@@ -5,6 +5,7 @@ import Navbar from "../Navbar/Navbar"
 import { motion } from "framer-motion"
 import Footer from "../Footer/Footer"
 import { ToastContainer, Zoom } from "react-toastify"
+import ScrollToTop from "../ScrollToTop/ScrollToTop"
 
 type Props = {
   children?: React.ReactNode
@@ -45,6 +46,7 @@ const Layout = ({ children }: Props) => {
           draggable
           transition={Zoom}
         />
+        <ScrollToTop/>
       </ContentWrapper>
       <Footer />
     </>
