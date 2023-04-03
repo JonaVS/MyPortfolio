@@ -1,8 +1,14 @@
 import React from "react"
+import { Variants } from "framer-motion"
 import { ActionsWrapper, ProjectsIcon, ProjectsLink, ResumeLink, ResumeIcon } from "./homeActions.styles"
 import { useIntl } from "gatsby-plugin-react-intl"
 import { graphql, useStaticQuery } from "gatsby"
 import { ResumeData } from "../../../types/GraphqlQueriesTypes/ResumeData"
+
+const actionsWrapper: Variants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { delay: 2.5, duration: 0.5 } },
+}
 
 const HomeActions = () => {
   const intl = useIntl()
@@ -19,7 +25,7 @@ const HomeActions = () => {
   const resume = intl.locale === "en" ? nodes[0] : nodes[1]
 
   return (
-    <ActionsWrapper>
+    <ActionsWrapper variants={actionsWrapper} initial="hidden" animate="show">
       <ProjectsLink to="/projects">
         <ProjectsIcon />
         {intl.formatMessage({ id: "projects-link" })}

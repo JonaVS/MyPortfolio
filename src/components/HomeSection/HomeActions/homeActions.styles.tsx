@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components"
+import { motion } from "framer-motion"
 import { BsBriefcase } from "react-icons/bs"
 import { IoDocumentTextOutline } from "react-icons/io5"
 import { StyledGatsbyLink, StyledLink } from "../../shared/ButtonLink/buttonLink.styles"
 
-export const ActionsWrapper = styled.div`
+export const ActionsWrapper = styled(motion.div)`
   display: flex;
   justify-content: center;
   align-items: center;
