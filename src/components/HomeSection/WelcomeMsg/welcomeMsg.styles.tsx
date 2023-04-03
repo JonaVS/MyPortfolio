@@ -1,22 +1,7 @@
-import styled, { css, keyframes } from "styled-components"
+import { motion } from "framer-motion"
+import styled from "styled-components"
 
-const moveLeft = keyframes`
-  0%   {opacity: 1;}
-  50%  {opacity: 0.5;}
-  100% {transform: translateX(60px); opacity: 0.3;}
-`
-const moveRight = keyframes`
-  0%   {opacity: 1;}
-  50%  {opacity: 0.5;}
-  100% {transform: translateX(-90px); opacity: 0;}
-`
-const moveUp = keyframes`
-  0%   {opacity: 1;}
-  50%  {opacity: 0.5;}
-  100% {transform: translateY(50px); opacity: 0;}
-`
-
-export const MessageWrapper = styled.div`
+export const MessageWrapper = styled(motion.div)`
   position: relative;
   text-align: center;
 `
@@ -62,46 +47,6 @@ export const Name = styled.span`
   color: var(--PortGreen);
 `
 
-const lineBaseStyles = css`
-  opacity: 0;
+export const MessageLine = styled(motion.span)`
   display: block;
-  animation-direction: reverse;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-`
-
-type MessageLineProps = {
-  animationName: "moveUp" | "moveRight" | "moveLeft"
-  animationDuration: number
-  animationDelay?: number
-}
-
-export const MessageLine = styled.span<MessageLineProps>`
-  ${lineBaseStyles}
-  ${({ animationName }) => {
-    switch (animationName) {
-      case "moveUp":
-        return css`
-          animation-name: ${moveUp};
-        `
-      case "moveLeft":
-        return css`
-          animation-name: ${moveLeft};
-        `
-      case "moveRight":
-        return css`
-          animation-name: ${moveRight};
-        `
-      default:
-        break
-    }
-  }};
-  ${({ animationDuration }) =>
-    css`
-      animation-duration: ${animationDuration && animationDuration}s;
-    `};
-  ${({ animationDelay }) =>
-    css`
-      animation-delay: ${animationDelay && animationDelay}s;
-    `};
 `
