@@ -1,5 +1,5 @@
 import React from "react"
-import { Variants } from "framer-motion"
+import { Variants } from "motion/react"
 import { ActionsWrapper, ProjectsIcon, ProjectsLink, ResumeLink, ResumeIcon } from "./homeActions.styles"
 import { useIntl } from "gatsby-plugin-react-intl"
 import { graphql, useStaticQuery } from "gatsby"

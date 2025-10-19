@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { BsBriefcase } from "react-icons/bs"
 import { IoDocumentTextOutline } from "react-icons/io5"
 import { StyledGatsbyLink, StyledLink } from "../../shared/ButtonLink/buttonLink.styles"
@@ -19,7 +19,7 @@ const baseLinksStyles = css`
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  :hover {
+  &:hover {
     position: relative;
     transform: translateY(5px);
   }

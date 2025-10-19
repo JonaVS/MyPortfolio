@@ -1,5 +1,5 @@
 import React from "react"
-import { Variants } from "framer-motion"
+import { Variants } from "motion/react"
 import {
   Message,
   MessageLine,

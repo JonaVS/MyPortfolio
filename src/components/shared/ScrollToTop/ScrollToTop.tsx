@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
-import { AnimatePresence } from "framer-motion"
+import { AnimatePresence, Variants } from "motion/react"
 import { StyledScrollToTop } from "./scrollToTop.styles"
 import { AiOutlineArrowUp } from "react-icons/ai"
 
 //START--Framer motion variants--START
-const toTopBtn = {
+const toTopBtn:Variants = {
   hidden: { scale: 0 },
   show: {
     scale: 1,
